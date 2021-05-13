@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libpng-dev \
+    git \
     libonig-dev
 
 # Add facedetect
@@ -61,4 +62,4 @@ RUN service supervisor restart \
     && supervisord -c /etc/supervisor/supervisord.conf \
     && supervisorctl reread \
     && supervisorctl update \
-    && supervisorctl start laravel-worker:* 
+    && supervisorctl start laravel-worker:*
